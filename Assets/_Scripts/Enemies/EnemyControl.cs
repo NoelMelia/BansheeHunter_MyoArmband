@@ -5,17 +5,19 @@ using UnityEngine;
 public class EnemyControl : MonoBehaviour
 {
     public Transform target;
-    float moveSpeed;
+    [SerializeField]private float moveSpeed = 10;
     //public GameObject explosion;
     public Transform myTransform; //current transform data of this enemy
     private ScoreKeeper score;
     [SerializeField] private int scoreValue = 5;
+    private Health health;
 
     private void Start()
     {
+        health = FindObjectOfType<Health>();
         score = FindObjectOfType<ScoreKeeper>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        moveSpeed = Random.Range(1f, 10f);
+        //moveSpeed = Random.Range(5f, 10f);
     }
 
     private void Update()
@@ -25,11 +27,14 @@ public class EnemyControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switch(other.gameObject.tag){
+        switch (other.gameObject.tag)
+        {
             case "Player":
                 // pLayer Getting hit
                 Debug.Log("Player Hit");
+
                 Destroy(gameObject);
+                health.TakeDamage(1);
                 break;
 
             case "Bullet":
@@ -40,15 +45,12 @@ public class EnemyControl : MonoBehaviour
                 break;
         }
     }
+
     private void MovingEnemy()
     {
-
         //look
         transform.LookAt(target);
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-        
-            
-        
     }
     private void ProcessHit()
     {

@@ -16696,7 +16696,7 @@ GameObject:
   - component: {fileID: 7227050640260760149}
   m_Layer: 0
   m_Name: wizard_weapon_macanim DEMO
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16753,6 +16753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  moveSpeed: 10
   myTransform: {fileID: 4000011578242470}
   scoreValue: 5
 --- !u!65 &7227050640260760149
@@ -16766,8 +16767,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.894128, y: 7.2687387, z: 0.25173187}
-  m_Center: {x: -3.9139028, y: 3.134369, z: -0.37413406}
+  m_Size: {x: 3.3711133, y: 7.2687387, z: 1}
+  m_Center: {x: 0.07838541, y: 3.134369, z: 0}
 --- !u!1 &1000013699516860
 GameObject:
   m_ObjectHideFlags: 0

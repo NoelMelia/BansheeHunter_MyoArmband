@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     private int maxHealth = 5;
-    [SerializeField]private int currentHealth;
+    [SerializeField]public int currentHealth;
     [SerializeField]public Text amountOfHealth;
     [SerializeField] private GameObject gameOverPanel;
     private static Health instance;
@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
     {// When the Player Dies
         active = true;
         Time.timeScale = 0f;
-        //ScoreKeeper.instance.ResetGameScore();
+        ScoreKeeper.instance.ResetGameScore();
         gameOverPanel.SetActive(true);
     }
 }

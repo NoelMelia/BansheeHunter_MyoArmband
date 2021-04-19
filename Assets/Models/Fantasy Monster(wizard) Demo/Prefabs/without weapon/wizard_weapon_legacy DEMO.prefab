@@ -43,9 +43,10 @@ GameObject:
   - component: {fileID: 111000010215138216}
   - component: {fileID: 3658130051672440127}
   - component: {fileID: 6589497564687758603}
+  - component: {fileID: 2499267248968356517}
   m_Layer: 0
   m_Name: wizard_weapon_legacy DEMO
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 1000010252498714}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 3.3, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4000013344099918}
   - {fileID: 4000011918736480}
@@ -99,14 +100,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010252498714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74c45dde0abb0e644a8314c5fe37ab30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  moveSpeed: 2
   myTransform: {fileID: 4000013314187654}
-  scoreValue: 5
+  scoreValue: 0
 --- !u!65 &6589497564687758603
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -120,6 +122,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3711133, y: 7.2687387, z: 1}
   m_Center: {x: 0.07838541, y: 3.134369, z: 0}
+--- !u!114 &2499267248968356517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010252498714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d78b574f0afc6e40bcb1e4cb054da50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  moveSpeed: 10
+  myTransform: {fileID: 4000013314187654}
 --- !u!1 &1000010307727294
 GameObject:
   m_ObjectHideFlags: 0
