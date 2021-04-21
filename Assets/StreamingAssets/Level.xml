@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<grammar version="1.0" xml:lang="en-US" mode="voice"
+root="toplevel" tag-format="semantics/1.0"
+xmlns="http://www.w3.org/2001/06/grammar" >
+
+
+  <!-- Top level of main rules -->
+  <rule id="toplevel" scope="public">
+    <one-of>
+      <item>
+        <ruleref uri="#options" />
+      </item>
+			<item>
+        <ruleref uri="#Volume"/>
+      </item>
+    </one-of>
+  </rule>
+  <!-- Main Menu Options rule -->
+  
+  <!-- In game Options rule -->
+  <rule id="options">
+    <one-of>
+      <item>
+        <tag>out.pause = "quit";</tag>
+        <one-of>
+
+          <item> Back to Menu </item>
+          <item> Back to Main </item>
+          <item> Go Back to Menu </item>
+          <item> Go Back to Main Menu </item>
+          <item> Go Back to Main </item>
+          <item> Go Back </item>
+
+          <item> Return to Menu </item>
+          <item> Return to Main Menu </item>
+          <item> Return to Main </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.pause = "continue";</tag>
+        <one-of>
+          <item> resume game </item>
+          <item> resume the game </item>
+
+          <item> continue game </item>
+          <item> continue the game </item>
+
+          <item> Back to game </item>
+          <item> Back to the game </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.pause = "pause the game";</tag>
+        <one-of>
+          <item> Pause the game </item>
+          <item> Pause game </item>
+
+          <item> Stop the game </item>
+          <item> Stop game </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.pause = "restart";</tag>
+        <one-of>
+          <item> Restart Game </item>
+          <item> Restart the Game </item>
+
+          <item> Restart the Level </item>
+          <item> Restart Level </item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+  <!-- Main Volume rule -->
+   <rule id="Volume">
+		<example> down </example>
+		<example> up </example>
+		<one-of>
+      <item>
+        <ruleref uri="#VolLeft"/>   
+      </item>
+      <item>
+        <ruleref uri="#VolRight"/>
+      </item>
+    </one-of>
+	</rule>
+  <!-- Decrease Volume rule -->
+  <rule id="VolLeft">
+		<example> decrease </example>
+    <tag> out.volume = "decrease"; </tag>
+		<one-of>
+			<item> Volume left </item>
+			<item> Volume down </item>
+
+      <item> Reduce Volume </item>
+      <item> Decrease Volume </item>
+
+      <item> Reduce Sound </item>
+      <item> Decrease Sound </item>
+
+      <item> Sound left </item>
+			<item> Sound down </item>
+
+
+		</one-of>
+	</rule>
+  <!-- Increase Volume rule -->
+	<rule id="VolRight">
+		<example> right </example>
+    <tag> out.volume = "increase"; </tag>
+		<one-of>
+      <item> Volume right </item>
+			<item> Volume up </item>
+
+      <item> Increase Volume </item>
+
+      <item> Increase Sound </item>
+
+      <item> Sound right </item>
+			<item> Sound up </item>
+		</one-of>
+	</rule>
+</grammar>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<grammar version="1.0" xml:lang="en-US" mode="voice"
+root="toplevel" tag-format="semantics/1.0"
+xmlns="http://www.w3.org/2001/06/grammar" >
+
+
+  <!-- Top level of main rules -->
+  <rule id="toplevel" scope="public">
+    <one-of>
+      <item>
+        <ruleref uri="#main" />
+      </item>
+    </one-of>
+  </rule>
+  <!-- Main Menu Options rule -->
+  <rule id="main">
+    <one-of>
+      <item>
+        <tag>out.menu = "exit";</tag>
+        <one-of>
+          <item> finish the game </item>
+          <item> finish the level </item>
+          <item> finish game </item>
+          <item> finish level </item>
+
+          <item> exit the game </item>
+          <item> exit game </item>
+
+          <item> quit the game </item>
+          <item> quit game </item>
+
+          <item> end game </item>
+          <item> end the game </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out.menu = "start";</tag>
+        <one-of>
+          <item> Start the game </item>
+          <item> Start game </item>
+
+          <item> begin game </item>
+          <item> begin the game </item>
+
+          <item> begin new game </item>
+          <item> new game </item>
+
+          <item> start level </item>
+          <item> start the level </item>
+         </one-of>
+      </item>
+    </one-of>
+  </rule>
+</grammar>

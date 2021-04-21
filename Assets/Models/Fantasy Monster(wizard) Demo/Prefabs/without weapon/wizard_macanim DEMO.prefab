@@ -20238,6 +20238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  moveSpeed: 10
   myTransform: {fileID: 4000010723399292}
   scoreValue: 5
 --- !u!65 &5314593813498340530

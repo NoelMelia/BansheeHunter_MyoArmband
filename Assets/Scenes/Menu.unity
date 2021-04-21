@@ -571,27 +571,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 867583437}
-  - component: {fileID: 867583436}
+  - component: {fileID: 867583438}
   m_Layer: 0
   m_Name: GrammerController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &867583436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 867583435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 609d678738b918e48be2d9e3cd6e1d30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  results: {fileID: 0}
+  m_IsActive: 1
 --- !u!4 &867583437
 Transform:
   m_ObjectHideFlags: 0
@@ -606,6 +593,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &867583438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867583435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1524dfc92c2274187ab5eb719f03cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &895867378 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 56783336057022588, guid: b573b246aadfebb488fd939d149fcc81,
@@ -1500,7 +1499,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 867583436}
+      - m_Target: {fileID: 867583438}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1881,7 +1880,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 867583436}
+      - m_Target: {fileID: 867583438}
         m_MethodName: SceneLoader
         m_Mode: 3
         m_Arguments:

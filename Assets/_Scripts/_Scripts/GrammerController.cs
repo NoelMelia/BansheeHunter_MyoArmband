@@ -15,7 +15,7 @@ public class GrammerController : MonoBehaviour
     private PauseMenu pauseMenu;
     private SetVolume setVolume; 
     private Player player;
-    [SerializeField]private Text results;
+
     private GrammarRecognizer gr;
     private Health health;
 
@@ -24,7 +24,7 @@ public class GrammerController : MonoBehaviour
         _Keyresponse = "";
         // Load in the XML file
         gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath,  
-        "MainMenu.xml"), ConfidenceLevel.Low); 
+        "Level.xml"), ConfidenceLevel.Low); 
         
         // Begin the Grammar Recogniser
         gr.OnPhraseRecognized += GR_OnPhraseRecognized;
@@ -33,8 +33,6 @@ public class GrammerController : MonoBehaviour
 
         pauseMenu = FindObjectOfType<PauseMenu>();
         setVolume = FindObjectOfType<SetVolume>();
-        player = FindObjectOfType<Player>();
-        health = FindObjectOfType<Health>();
     }
     private void Update() {
         //Switch between the Words Spoken
@@ -42,8 +40,6 @@ public class GrammerController : MonoBehaviour
         PauseGameCommands();
         VolumeCommands();
         PauseCommands();
-        MovementCommands();
-        MenuCommands();
         
     }
     // Checking that game is not paused and Command to pause game
@@ -57,7 +53,6 @@ public class GrammerController : MonoBehaviour
                     pauseMenu.Pause();
                     break;
             }
-            results.text = "Game Paused " + _response;
             _response = "";
         }
     }
@@ -77,7 +72,6 @@ public class GrammerController : MonoBehaviour
                     _response = "";
                     break;
             }
-            results.text = "In Volume " + _response;
             _response = "";
         }
     }
@@ -100,7 +94,6 @@ public class GrammerController : MonoBehaviour
                     _response = "";
                     break;
             }
-            results.text = "In Pause Menu " + _response;
             _response = "";
         }
         
@@ -121,35 +114,8 @@ public class GrammerController : MonoBehaviour
                     _response = "";
                     break;
             }
-            results.text = "In Pause Menu " + _response;
             _response = "";
         }
-    }
-    private void MovementCommands(){
-        if(_Keyresponse == "movement" && !PauseMenu.IsPaused){
-            
-            switch (_response)
-            {
-                // Player Rules
-                case "up":
-                    player.UpSpeech();
-                    break;
-                case "fire":
-                    player.AtackSpeech();
-                    break;
-                case "stop fire":
-                    player.StopAtackSpeech();
-                    break;
-                case "down":
-                    player.DownSpeech();
-                    break;
-                default:
-                    _response = "";
-                    break;
-            }
-            results.text = "In Movement " + _response;
-            _response = "";
-        }      
     }
     // Menu Comand when in Main Menu
     private void MenuCommands(){
@@ -168,7 +134,6 @@ public class GrammerController : MonoBehaviour
                     _response = "";
                     break;
             }
-            results.text = "In Menu " + _response;
             _response = "";
         }
     }
@@ -194,16 +159,6 @@ public class GrammerController : MonoBehaviour
         }
         //use a string builder to create the string and out to the user.
         Debug.Log(message);
-    }
-    // Called in Button to go to New Scene
-    public void SceneLoader(int level){
-        SceneManager.LoadScene(level);
-    }
-    //Called when button is active
-    public void QuitGame()
-    {
-        Application.Quit();
-        Debug.Log("Game is exiting");
     }
     // Stops the Grammer Recognizer
     private void OnApplicationQuit()

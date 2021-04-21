@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     private int maxHealth = 5;
@@ -11,16 +12,7 @@ public class Health : MonoBehaviour
     private static Health instance;
     private ScoreKeeper sc;
     public static bool active = false;
-    private void Awake() {
-        // Singleton
-        if (instance != null){
-            Destroy(this.gameObject);
-        }
-        else{
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-    }
+    
     void Start()
     {
         // Setting of the player at the beginning of Level
@@ -48,7 +40,8 @@ public class Health : MonoBehaviour
     {// When the Player Dies
         active = true;
         Time.timeScale = 0f;
-        ScoreKeeper.instance.ResetGameScore();
+        
         gameOverPanel.SetActive(true);
+        //SceneManager.LoadScene(0);
     }
 }

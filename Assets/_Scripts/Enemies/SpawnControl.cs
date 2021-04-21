@@ -15,7 +15,7 @@ public class SpawnControl : MonoBehaviour
         //if (ShootToStart.IsReady)
         //{
             spawnAllowed = true;
-            InvokeRepeating("SpawnEnemies", 5f, 10f); 
+            InvokeRepeating("SpawnEnemies", 1f, 5f); 
 
         //}
 

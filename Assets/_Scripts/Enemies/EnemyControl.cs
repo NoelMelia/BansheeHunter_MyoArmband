@@ -41,6 +41,7 @@ public class EnemyControl : MonoBehaviour
                 // Something Happens when Bullet hits
                 Debug.Log("Bullet Hit");
                 ProcessHit();
+                Destroy(other);
                 Destroy(gameObject);
                 break;
         }
