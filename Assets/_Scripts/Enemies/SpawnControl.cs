@@ -8,16 +8,24 @@ public class SpawnControl : MonoBehaviour
 {
     public Transform[] spawnPoints;
     public GameObject[] enemies;
-    int randomSpawnPoint, randomEnemy;
+    private int randomSpawnPoint, randomEnemy;
     public static bool spawnAllowed;
+    private AudioSource source;
+    public AudioClip bombenemy;
+    private ScoreKeeper score;
+    [SerializeField]private float timer;
+
     void Start()
     {
+        score = FindObjectOfType<ScoreKeeper>();
+        source = GetComponent<AudioSource>();
         //if (ShootToStart.IsReady)
         //{
-            spawnAllowed = true;
-            InvokeRepeating("SpawnEnemies", 1f, 5f); 
+        spawnAllowed = true;
+        InvokeRepeating("SpawnEnemies", 1f, timer);// Start at 5 seconds between spawn
 
         //}
+
 
     }
 
@@ -30,6 +38,8 @@ public class SpawnControl : MonoBehaviour
             randomEnemy = Random.Range(0, enemies.Length);
             Instantiate(enemies[randomEnemy], spawnPoints[randomSpawnPoint].position,
                 Quaternion.identity);
+            source.PlayOneShot(bombenemy, 1.0f);
         }
     }
+
 }

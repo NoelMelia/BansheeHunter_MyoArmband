@@ -13,9 +13,12 @@ public class Enemy_Spawner : MonoBehaviour
 
     [SerializeField]private float spawnTime = 5.0f;
     [SerializeField]private float spawnDelay = 3.0f;
+    
 
     private void Start() {
+        
         Invoke("SpawnEnemies",  spawnTime);
+        
     }
     private void Update() {
         if(PauseMenu.IsPaused){

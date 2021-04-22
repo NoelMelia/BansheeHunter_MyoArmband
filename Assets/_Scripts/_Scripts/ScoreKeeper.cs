@@ -10,7 +10,6 @@ public class ScoreKeeper : MonoBehaviour
 
     [SerializeField] Text scoreText;
     [SerializeField] public int currentScore = 0;
-    private int addScore = 0;
 
     // Give gameobject numbers to count
     // Good idea to keep strings like this in a field, to avoid typos later.
@@ -18,17 +17,20 @@ public class ScoreKeeper : MonoBehaviour
     private const string scoreKey = "Score";
     public static ScoreKeeper instance;
     private NextLevel next;
+    public bool increaseSpeedx2;
+    public bool increaseSpeedx4;
 
     // set build of Score Text
     private void Start()
     {
+        increaseSpeedx2 = false;
+        increaseSpeedx4 = false;
         next = FindObjectOfType<NextLevel>();
         currentScore = 0;
 
         //currentScore = PlayerPrefs.GetInt(scoreKey, currentScore);
         scoreText.text = "Score: " + currentScore.ToString();
         highScoreNum = PlayerPrefs.GetInt(highScoreKey);
-        Debug.Log(highScoreNum);
         if (next.active)
         {
             ResetGameScore();
@@ -43,34 +45,26 @@ public class ScoreKeeper : MonoBehaviour
         //PlayerPrefs.GetInt(scoreKey, currentScore).ToString();
         PlayerPrefs.SetInt(scoreKey, currentScore);
         SetHighScore();
+        // Increase the Speed of enemy to track the player
+        // If over a certain score
+        if (currentScore >= 100)
+        {
+            increaseSpeedx2 = true;
+        }
+        if (currentScore >= 250)
+        {
+            increaseSpeedx4 = true;
+        }
     }
     // Reseting the Game Details awy the Player has died or Scene is ended
     public void ResetGameScore()
     {
         PlayerPrefs.SetInt(scoreKey, 0);
         currentScore = 0;
+        increaseSpeedx2 = false;
+        increaseSpeedx4 = false;
     }
 
-    // private void OnEnable()
-    // {
-    //     SceneManager.sceneLoaded += OnScreenChange;
-    // }
-    // private void OnDisable()
-    // {
-    //     SceneManager.sceneLoaded -= OnScreenChange;
-    //     // Set our high score.
-    //     //PlayerPrefs.SetInt (highScoreKey, highScoreNum);
-    //     // Save our data.
-    //     //PlayerPrefs.Save();
-    //     Debug.Log("I'm being Disabled! The high score is currently: " + highScoreNum);
-    // }
-    // private void OnScreenChange(Scene scene, LoadSceneMode loadSceneMode)
-    // {
-    //     // Retriving the Text Object once going to a different scene
-    //     scoreText = GameObject.Find(scoreKey).GetComponent<Text>();
-    //     ResetGameScore();
-    // }
-    // Add score when the block is destroyed
     public void AddToScore(int score)
     {// Add the score to Test displaying on Screen
         currentScore += score;
@@ -83,17 +77,11 @@ public class ScoreKeeper : MonoBehaviour
         if (currentScore > highScoreNum)
         {
             // Change the high score to the new current value.
-            highScoreNum = currentScore + addScore;
+            highScoreNum = currentScore;
             // Update the high score UI text.
-            //highScoreText.text = highScore.ToString();
-
             PlayerPrefs.SetInt(highScoreKey, highScoreNum);
             PlayerPrefs.Save();
         }
     }
-    public void CarryScore()
-    {
-        PlayerPrefs.SetInt(scoreKey, currentScore);
-        PlayerPrefs.Save();
-    }
+
 }

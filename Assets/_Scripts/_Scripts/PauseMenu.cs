@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using LockingPolicy = Thalmic.Myo.LockingPolicy;
+using Pose = Thalmic.Myo.Pose;
+using UnlockType = Thalmic.Myo.UnlockType;
+using VibrationType = Thalmic.Myo.VibrationType;
 public class PauseMenu : MonoBehaviour
 {
+    public ThalmicMyo myo;
     [SerializeField] private GameObject menuUI;
 
     private KeyCode pauseKey = KeyCode.Escape;
@@ -20,6 +25,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        myo = myo.GetComponent<ThalmicMyo> ();
         sc = FindObjectOfType<ScoreKeeper>();
         volume = FindObjectOfType<SetVolume>();
         menuUI.SetActive(false);
@@ -27,10 +33,11 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {// If Escape button is pressed
-        if (Input.GetKeyDown(pauseKey))
+        if (Input.GetKeyDown(pauseKey) )//||(myo.pose == Thalmic.Myo.Pose.DoubleTap))
         {
             SetPauseStatus(!isPaused);
         }
+
     }
 
     void OnDisable()

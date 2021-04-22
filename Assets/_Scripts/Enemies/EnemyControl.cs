@@ -5,12 +5,13 @@ using UnityEngine;
 public class EnemyControl : MonoBehaviour
 {
     public Transform target;
-    [SerializeField]private float moveSpeed = 10;
+    [SerializeField] private float moveSpeed = 10;
     //public GameObject explosion;
     public Transform myTransform; //current transform data of this enemy
     private ScoreKeeper score;
     [SerializeField] private int scoreValue = 5;
     private Health health;
+
 
     private void Start()
     {
@@ -23,6 +24,15 @@ public class EnemyControl : MonoBehaviour
     private void Update()
     {
         MovingEnemy();
+        if (score.increaseSpeedx2)
+        {
+            moveSpeed = 30;
+        }else if(score.increaseSpeedx4){
+            moveSpeed = 30;
+        }else{
+            moveSpeed = 5;
+        }
+        Debug.Log("Move Speed " + moveSpeed);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +41,6 @@ public class EnemyControl : MonoBehaviour
         {
             case "Player":
                 // pLayer Getting hit
-                Debug.Log("Player Hit");
 
                 Destroy(gameObject);
                 health.TakeDamage(1);
@@ -39,8 +48,8 @@ public class EnemyControl : MonoBehaviour
 
             case "Bullet":
                 // Something Happens when Bullet hits
-                Debug.Log("Bullet Hit");
                 ProcessHit();
+
                 Destroy(other);
                 Destroy(gameObject);
                 break;

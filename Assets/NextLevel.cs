@@ -19,13 +19,10 @@ public class NextLevel : MonoBehaviour
     private void Update()
     {
         currentScore = scoreKeeper.currentScore;
-        Debug.Log("Score " + currentScore);
         if (currentScore >= NextLevelAmount)
         {
             active = true;
             SceneManager.LoadScene(level);
         }
-
-        
     }
 }
