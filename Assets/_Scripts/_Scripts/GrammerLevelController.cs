@@ -8,13 +8,12 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
-public class GrammerController : MonoBehaviour
+public class GrammerLevelController : MonoBehaviour
 {
     private string _Keyresponse = "";
     private string _response = "";
     private PauseMenu pauseMenu;
     private SetVolume setVolume; 
-    private Player player;
 
     private GrammarRecognizer gr;
     private Health health;

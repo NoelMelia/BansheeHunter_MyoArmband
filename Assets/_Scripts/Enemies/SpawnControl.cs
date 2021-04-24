@@ -12,12 +12,12 @@ public class SpawnControl : MonoBehaviour
     public static bool spawnAllowed;
     private AudioSource source;
     public AudioClip bombenemy;
-    private ScoreKeeper score;
+    private ScoreManager score;
     [SerializeField]private float timer;
 
     void Start()
     {
-        score = FindObjectOfType<ScoreKeeper>();
+        score = FindObjectOfType<ScoreManager>();
         source = GetComponent<AudioSource>();
         //if (ShootToStart.IsReady)
         //{

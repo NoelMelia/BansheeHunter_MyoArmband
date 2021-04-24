@@ -8,7 +8,7 @@ public class EnemyControl : MonoBehaviour
     [SerializeField] private float moveSpeed = 10;
     //public GameObject explosion;
     public Transform myTransform; //current transform data of this enemy
-    private ScoreKeeper score;
+    private ScoreManager score;
     [SerializeField] private int scoreValue = 5;
     private Health health;
 
@@ -16,7 +16,7 @@ public class EnemyControl : MonoBehaviour
     private void Start()
     {
         health = FindObjectOfType<Health>();
-        score = FindObjectOfType<ScoreKeeper>();
+        score = FindObjectOfType<ScoreManager>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         //moveSpeed = Random.Range(5f, 10f);
     }

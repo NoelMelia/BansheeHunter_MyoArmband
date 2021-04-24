@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ScoreKeeper : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
     [SerializeField] int highScoreNum;
 
@@ -15,8 +15,7 @@ public class ScoreKeeper : MonoBehaviour
     // Good idea to keep strings like this in a field, to avoid typos later.
     private const string highScoreKey = "HighScore";
     private const string scoreKey = "Score";
-    public static ScoreKeeper instance;
-    private NextLevel next;
+    public static ScoreManager instance;
     public bool increaseSpeedx2;
     public bool increaseSpeedx4;
 
@@ -25,17 +24,12 @@ public class ScoreKeeper : MonoBehaviour
     {
         increaseSpeedx2 = false;
         increaseSpeedx4 = false;
-        next = FindObjectOfType<NextLevel>();
         currentScore = 0;
 
         //currentScore = PlayerPrefs.GetInt(scoreKey, currentScore);
         scoreText.text = "Score: " + currentScore.ToString();
         highScoreNum = PlayerPrefs.GetInt(highScoreKey);
-        if (next.active)
-        {
-            ResetGameScore();
-            next.active = false;
-        }
+
     }
 
     void Update()

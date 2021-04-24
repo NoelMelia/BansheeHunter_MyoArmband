@@ -10,7 +10,6 @@ public class Health : MonoBehaviour
     [SerializeField]public Text amountOfHealth;
     [SerializeField] private GameObject gameOverPanel;
     private static Health instance;
-    private ScoreKeeper sc;
     public static bool active = false;
     
     void Start()
@@ -42,6 +41,5 @@ public class Health : MonoBehaviour
         Time.timeScale = 0f;
         
         gameOverPanel.SetActive(true);
-        //SceneManager.LoadScene(0);
     }
 }

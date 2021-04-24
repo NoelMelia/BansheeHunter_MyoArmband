@@ -13,7 +13,6 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject menuUI;
 
     private KeyCode pauseKey = KeyCode.Escape;
-    private ScoreKeeper sc;
     private SetVolume volume;
 
     private static bool isPaused = false;
@@ -26,7 +25,6 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         myo = myo.GetComponent<ThalmicMyo> ();
-        sc = FindObjectOfType<ScoreKeeper>();
         volume = FindObjectOfType<SetVolume>();
         menuUI.SetActive(false);
     }
