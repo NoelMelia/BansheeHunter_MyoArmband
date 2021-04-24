@@ -20,10 +20,12 @@ For this Project, the idea that was to develop an application that uses natural 
 
 ### **Purpose of the application**
 The purpose of the application was to demonstrate how the Myo can track motions using motion sensors that track and detect a gesture depending activity of your muscles and arm movement. The Myo is a controller that can trigger variety of actions depending on the gesture that has been set in the game or application which would have instructions to set up and use. The electrical signal produced by a user muscles in the nervous system is called Electromyogram (EMG) signal. The EMG sensor that can determine the motion in the Myo. 
+
 The project is built on Unity with the Myo. It is a demonstration in the use and function in how to use the Myo Armband. The project is first person shooter that can shoot enemies and look around the screen to hit them. Later decided using voice commands for the menu details. I wanted to not use the keyboard or mouse in this project once the game was activated.
 
 The game has a high score that the player must beat to progress through the level and achieve a new high score by destroying the enemies in the level. Once the player dies then they get the chance to replay the level and try to achieve a new high score which is displayed back in the main menu.
 
+![Description](./Images/Description.png)
 ## **Gestures identified as appropriate for this application**
 The Myo Armband uses a variety of gestures to achieve a purpose. The Myo can be attached on your wrist or arm depending on the application. For this application the user must connect to the arm. Some gestures used in the project were making a fist, spreading your fingers and the movement of the Myo to look around the screen. The myo uses more as the image below shows:
  
@@ -33,17 +35,15 @@ In the project the myo devices needs to be connected first to active the level. 
 
 1.	The Player can use the Myo to look around the screen and aim at the direction of the enemies as the approach the player. The motion of the Myo is attached using a script which determine the direction of view which the camera follows.
 
-
-
-
+![Description](./Images/Direction.png)
 
 2.	When the player has attached the Myo to themselves, making a Fist will shoot an bullet from the gun. The player will have to fire at the enemy to gain points to determine a high score. 
 
-
+![Description](./Images/Fist.png)
 
 3.	Spreading your fingers to reposition the camera for viewing where the player will be face forward. This is because the position of the Myo can be adjust at times and can be hard to view the game from an angle. 
 
-
+![Description](./Images/Spread.png)
 
 Voice Recognition commands were also used for the menu’s. Certain phrases used during the main menu and pausing the game and later described in detail all the rules that were used in the application.
 
@@ -89,6 +89,8 @@ Level 1 - Volume – During the Pause Menu Activated.
 
 ### **Architecture**
 The game is designed on Unity in a 3D environment where the player can look around the screen using the Myo Armband and Voice commands to activate certain function depending on the scene they are in. The aim of the game is getting the highest score possible until the player is defeated.
+
+![Description](./Images/Architecture.png)
 
 As stated above in the document the player uses a Myo Armband to control the actions of the player by looking around the screen to shoot the enemy before dying. 
 *	Grammar Controller
