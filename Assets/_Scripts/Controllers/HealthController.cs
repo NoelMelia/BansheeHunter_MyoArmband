@@ -39,7 +39,7 @@ public class HealthController : MonoBehaviour
     {// When the Player Dies
         active = true;
         Time.timeScale = 0f;
-        
+        // Set the gameover screen on
         gameOverPanel.SetActive(true);
     }
 }

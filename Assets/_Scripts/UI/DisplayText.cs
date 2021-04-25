@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class DisplayText : MonoBehaviour
 {
-    public GameObject myo = null;
-    public Text displayText;
+    [SerializeField] private GameObject myo = null;
+    private ThalmicHub hub;
+    [SerializeField] private Text displayText;
 
+    // Display details to attached to UI
     void Update()
     {
-
-        ThalmicHub hub = ThalmicHub.instance;
+        hub = ThalmicHub.instance;
 
         if (Input.GetKeyDown("q"))
         {

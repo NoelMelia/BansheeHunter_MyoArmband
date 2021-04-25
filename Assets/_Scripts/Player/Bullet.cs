@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
 	public static float speed = 5f;
 
-	public Rigidbody rb;
+	[SerializeField]private Rigidbody rb;
 
 	void Start()
 	{

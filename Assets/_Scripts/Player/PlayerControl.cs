@@ -31,9 +31,10 @@ public class PlayerControl : MonoBehaviour
         // Takes input from fire button
         if (Input.GetButton("Fire1") || (thalmicMyo.pose == Pose.Fist) && Time.time > nextShotTime)
         {
-
-            nextShotTime = Time.time + fireRateTime; // calculates the time until next fire
-            Instantiate(Bullet, shotSpawn.position, shotSpawn.rotation); // create shot from player ship position1
+            nextShotTime = Time.time + fireRateTime; 
+            // calculates the time until next fire
+            Instantiate(Bullet, shotSpawn.position, shotSpawn.rotation); 
+            // create shot from player position
 
             muzzleFlash?.Play();
             sc.PlayOneShot(shootClip);

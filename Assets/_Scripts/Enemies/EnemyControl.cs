@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyControl : MonoBehaviour
 {
-    public Transform target;
+    [SerializeField]private Transform target;
     [SerializeField] private float moveSpeed = 10;
     //public GameObject explosion;
-    public Transform myTransform; //current transform data of this enemy
+    [SerializeField]private Transform myTransform; //current transform data of this enemy
     private ScoreManager score;
     [SerializeField] private int scoreValue = 5;
     private HealthController health;

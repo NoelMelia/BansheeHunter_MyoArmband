@@ -42,7 +42,7 @@ public class JointOrientation : MonoBehaviour
         if (thalmicMyo.pose != _lastPose)
         {
             _lastPose = thalmicMyo.pose;
-
+            // Needed to set up an additional gesture because it wasnt tracking motion
             if (thalmicMyo.pose == Pose.FingersSpread || thalmicMyo.pose == Pose.DoubleTap)
             {
                 

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class GhostMainMenu : MonoBehaviour
 {
-    public Transform target;
+    // Just for Main menu to get the ghost to go to a target point on screen
+    [SerializeField]private Transform target;
     [SerializeField] private float moveSpeed = 10;
-    //public GameObject explosion;
-    public Transform myTransform; //current transform data of this enemy
+
+    [SerializeField]private Transform myTransform; //current transform data of this enemy
 
     private void Start()
-    {
+    {// Find the Follow Player Target
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
     private void Update()
@@ -24,7 +25,7 @@ public class GhostMainMenu : MonoBehaviour
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
     }
     private void OnTriggerEnter(Collider other)
-    {
+    {// Destroy the Game Object as meets target
         if(other.tag == "Player"){
             Debug.Log("Player Hit");
 

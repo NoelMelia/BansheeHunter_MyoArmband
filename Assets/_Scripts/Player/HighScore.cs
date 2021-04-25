@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class HighScore : MonoBehaviour
 {
-    [SerializeField] Text scoreText;
+    [SerializeField]private Text scoreText;
     private ScoreManager score;
     private int highScoreNumber;
-    // Start is called before the first frame update
     void Start()
     {
         highScoreNumber = PlayerPrefs.GetInt("HighScore");

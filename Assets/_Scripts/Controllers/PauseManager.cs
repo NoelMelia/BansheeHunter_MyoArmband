@@ -9,7 +9,7 @@ using UnlockType = Thalmic.Myo.UnlockType;
 using VibrationType = Thalmic.Myo.VibrationType;
 public class PauseManager : MonoBehaviour
 {
-    public GameObject myo = null;
+    [SerializeField]private GameObject myo = null;
     private ThalmicMyo thalmicMyo;
     [SerializeField] private GameObject menuUI;
 

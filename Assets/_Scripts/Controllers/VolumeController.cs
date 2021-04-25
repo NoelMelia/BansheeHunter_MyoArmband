@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class VolumeController : MonoBehaviour
 {
-    public AudioMixer mixer;
-    public Slider slider;
-    public AudioSource myMusic;
+    [SerializeField]private AudioMixer mixer;
+    [SerializeField]private Slider slider;
+    [SerializeField]private AudioSource myMusic;
 
     void Start()
     {
@@ -34,7 +34,7 @@ public class VolumeController : MonoBehaviour
         slider.value += volume;
     }
     public void PlayOneShot(AudioClip clip)
-    {
+    {// Play just one sound
         if (clip)
         {
             myMusic.PlayOneShot(clip);

@@ -6,27 +6,21 @@ using UnityEngine;
 
 public class SpawnControl : MonoBehaviour
 {
-    public Transform[] spawnPoints;
-    public GameObject[] enemies;
+    [SerializeField]private Transform[] spawnPoints;
+    [SerializeField]private GameObject[] enemies;
     private int randomSpawnPoint, randomEnemy;
-    public static bool spawnAllowed;
-    private AudioSource source;
-    public AudioClip bombenemy;
-    private ScoreManager score;
+    [SerializeField]private static bool spawnAllowed;
+    private AudioSource sound;
+    [SerializeField]private AudioClip bombenemy;
     [SerializeField]private float timer;
 
     void Start()
     {
-        score = FindObjectOfType<ScoreManager>();
-        source = GetComponent<AudioSource>();
-        //if (ShootToStart.IsReady)
-        //{
+        sound = GetComponent<AudioSource>();
+
         spawnAllowed = true;
-        InvokeRepeating("SpawnEnemies", 1f, timer);// Start at 5 seconds between spawn
-
-        //}
-
-
+        InvokeRepeating("SpawnEnemies", 1f, timer);
+        // Start at 5 seconds between spawn
     }
 
     // Update is called once per frame
@@ -38,7 +32,7 @@ public class SpawnControl : MonoBehaviour
             randomEnemy = Random.Range(0, enemies.Length);
             Instantiate(enemies[randomEnemy], spawnPoints[randomSpawnPoint].position,
                 Quaternion.identity);
-            source.PlayOneShot(bombenemy, 1.0f);
+            sound.PlayOneShot(bombenemy, 1.0f);
         }
     }
 
