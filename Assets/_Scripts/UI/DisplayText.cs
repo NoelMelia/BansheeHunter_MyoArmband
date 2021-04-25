@@ -39,7 +39,7 @@ public class DisplayText : MonoBehaviour
         {
             displayText.text =
                 "Fingers spread: Relocate the Position\n" +
-                "Double tap: Reload\n" +
+                "Movement: Move Arm around to Look in Screen\n" +
                 "Fist: Fire Weapon";
         }
     }

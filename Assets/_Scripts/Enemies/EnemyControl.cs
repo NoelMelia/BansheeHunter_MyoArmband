@@ -10,15 +10,16 @@ public class EnemyControl : MonoBehaviour
     public Transform myTransform; //current transform data of this enemy
     private ScoreManager score;
     [SerializeField] private int scoreValue = 5;
-    private Health health;
+    private HealthController health;
 
 
     private void Start()
     {
-        health = FindObjectOfType<Health>();
+        health = FindObjectOfType<HealthController>();
         score = FindObjectOfType<ScoreManager>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         //moveSpeed = Random.Range(5f, 10f);
+
     }
 
     private void Update()
@@ -27,29 +28,31 @@ public class EnemyControl : MonoBehaviour
         if (score.increaseSpeedx2)
         {
             moveSpeed = 30;
-        }else if(score.increaseSpeedx4){
+        }
+        else if (score.increaseSpeedx4)
+        {
             moveSpeed = 30;
-        }else{
+        }
+        else
+        {
             moveSpeed = 5;
         }
-        Debug.Log("Move Speed " + moveSpeed);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+
         switch (other.gameObject.tag)
         {
             case "Player":
-                // pLayer Getting hit
-
+                // Player Take Damage
                 Destroy(gameObject);
                 health.TakeDamage(1);
                 break;
 
             case "Bullet":
-                // Something Happens when Bullet hits
+                // Event Happens when Bullet hits
                 ProcessHit();
-
                 Destroy(other);
                 Destroy(gameObject);
                 break;

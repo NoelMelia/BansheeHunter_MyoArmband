@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
 		rb = GetComponent<Rigidbody>();
 	}
 	void FixedUpdate()
-	{
+	{// Fires in the direction Pointed at
 		rb.MovePosition(transform.position + transform.forward * speed);
 	}
 	private void OnTriggerEnter(Collider other)

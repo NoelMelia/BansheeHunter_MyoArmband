@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6446bcf63274a214d805edfdaa16452c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myo: {fileID: 1928346007}
+  myo: {fileID: 0}
   startUI: {fileID: 1650645836}
   freezeTime: 1
 --- !u!1 &47277912 stripped
@@ -1074,7 +1074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &836244189
 Transform:
   m_ObjectHideFlags: 0
@@ -1094,75 +1094,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &854750302
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3420636299960453755, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_Name
-      value: GrammerController
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420636299960453757, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420636299960453757, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420636299960453757, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420636299960453757, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420636299960453757, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420636299960453757, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420636299960453757, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420636299960453757, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420636299960453757, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420636299960453757, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420636299960453757, guid: eb88606f133be61489d2244f5b008d85,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: eb88606f133be61489d2244f5b008d85, type: 3}
 --- !u!1 &868294296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,10 +1537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9578aa9ae13ec454e8a7ed610642c3c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
-  currentScore: 0
-  NextLevelAmount: 300
-  active: 0
 --- !u!4 &1129674497
 Transform:
   m_ObjectHideFlags: 0
@@ -2343,7 +2270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e57102efa7adbb4abe34456c83e8a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myo: {fileID: 1928346007}
+  myo: {fileID: 1928346006}
   menuUI: {fileID: 988689554}
 --- !u!4 &1642258588 stripped
 Transform:
@@ -3006,7 +2933,7 @@ GameObject:
   - component: {fileID: 1883768368}
   - component: {fileID: 1883768367}
   m_Layer: 0
-  m_Name: Score Keeper
+  m_Name: ScoreManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3112,18 +3039,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 630703511}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1928346007 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11400000, guid: 863250160b56e46dbb2d227833b7338a,
-    type: 3}
-  m_PrefabInstance: {fileID: 630703511}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928346006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917262f8ecbe7423583085eb03acfbb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2055136397 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2791309214315567104, guid: ff7fe384fb097b643aab265a009e4fd1,
@@ -3344,7 +3259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f95f47762781184a9785f52740167d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myo: {fileID: 1928346007}
+  myo: {fileID: 1928346006}
   speed: 1
   fireRateTime: 2
   Bullet: {fileID: 162116, guid: 78dd6c3d90a1fdf4fb8789726cdcd2ba, type: 3}
@@ -3585,6 +3500,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff7fe384fb097b643aab265a009e4fd1, type: 3}
+--- !u!114 &3420636299709742626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420636299709742629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609d678738b918e48be2d9e3cd6e1d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &3420636299709742627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420636299709742629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3420636299709742629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3420636299709742627}
+  - component: {fileID: 3420636299709742626}
+  m_Layer: 0
+  m_Name: GrammerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &5577337140041443564
 PrefabInstance:
   m_ObjectHideFlags: 0

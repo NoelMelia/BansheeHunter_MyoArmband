@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class SetVolume : MonoBehaviour
+public class VolumeController : MonoBehaviour
 {
     public AudioMixer mixer;
     public Slider slider;

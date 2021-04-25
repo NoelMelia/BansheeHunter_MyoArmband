@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class Health : MonoBehaviour
+public class HealthController : MonoBehaviour
 {
     private int maxHealth = 5;
     [SerializeField]public int currentHealth;
     [SerializeField]public Text amountOfHealth;
     [SerializeField] private GameObject gameOverPanel;
-    private static Health instance;
+    private static HealthController instance;
     public static bool active = false;
     
     void Start()

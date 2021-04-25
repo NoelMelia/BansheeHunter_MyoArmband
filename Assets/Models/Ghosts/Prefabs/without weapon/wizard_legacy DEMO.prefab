@@ -15409,6 +15409,7 @@ MonoBehaviour:
   moveSpeed: 10
   myTransform: {fileID: 4000013797961222}
   scoreValue: 5
+  muzzleFlash: {fileID: 198000013861719214}
 --- !u!65 &1100586748203492228
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20605,7 +20606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4000014012512674
 Transform:
   m_ObjectHideFlags: 0
@@ -21791,7 +21792,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -21844,7 +21845,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -21900,7 +21901,7 @@ ParticleSystem:
     enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -21953,7 +21954,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:

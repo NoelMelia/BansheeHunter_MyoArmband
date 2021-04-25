@@ -81,7 +81,7 @@ There are voice recognition commands that are used in the both scenes and can be
 *	**Return to Main Menu** – Return back to Main Menu Scene.
     *	Back to Menu, Return to main menu.
 
-Level 1 - Volume – During the Pause Menu Activated.
+**Level 1 - Volume** – During the Pause Menu Activated.
 *	**Increase Volume** – On the slider the Increase volume will appear.
     *	Sound up, increase sound.
 *	**Reduce Volume** – On the slider the Increase volume will appear.

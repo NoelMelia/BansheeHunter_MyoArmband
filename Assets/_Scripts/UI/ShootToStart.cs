@@ -8,7 +8,8 @@ using UnlockType = Thalmic.Myo.UnlockType;
 using VibrationType = Thalmic.Myo.VibrationType;
 public class ShootToStart : MonoBehaviour
 {
-    [SerializeField] private ThalmicMyo myo;
+    [SerializeField] private GameObject myo;
+    private ThalmicMyo thalmicMyo;
     [SerializeField] private GameObject startUI;
     [SerializeField] private bool freezeTime = true;
 
@@ -21,6 +22,7 @@ public class ShootToStart : MonoBehaviour
 
     void Start()
     {
+        thalmicMyo = myo.GetComponent<ThalmicMyo>();
         SetReadyStatus(false);
     }
 
@@ -30,9 +32,10 @@ public class ShootToStart : MonoBehaviour
         {
             return;
         }
-        else if (!PauseMenu.IsPaused && Input.GetButtonDown("Fire1") || (myo.pose == Thalmic.Myo.Pose.Fist))
+        else if (!PauseManager.IsPaused && Input.GetButtonDown("Fire1") || (thalmicMyo.pose == Pose.Fist))
         {
             SetReadyStatus(true);
+            ExtendUnlockAndNotifyUserAction (thalmicMyo);
         }
     }
 
@@ -45,5 +48,17 @@ public class ShootToStart : MonoBehaviour
         {
             Time.timeScale = status ? 1f : 0f;
         }
+    }
+    // Extend the unlock if ThalmcHub's locking policy is standard, and notifies the given myo that a user action was
+    // recognized.
+    void ExtendUnlockAndNotifyUserAction (ThalmicMyo myo)
+    {
+        ThalmicHub hub = ThalmicHub.instance;
+
+        if (hub.lockingPolicy == LockingPolicy.Standard) {
+            myo.Unlock (UnlockType.Timed);
+        }
+
+        myo.NotifyUserAction ();
     }
 }

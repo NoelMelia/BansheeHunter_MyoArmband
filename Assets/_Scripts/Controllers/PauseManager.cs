@@ -7,13 +7,14 @@ using LockingPolicy = Thalmic.Myo.LockingPolicy;
 using Pose = Thalmic.Myo.Pose;
 using UnlockType = Thalmic.Myo.UnlockType;
 using VibrationType = Thalmic.Myo.VibrationType;
-public class PauseMenu : MonoBehaviour
+public class PauseManager : MonoBehaviour
 {
-    public ThalmicMyo myo;
+    public GameObject myo = null;
+    private ThalmicMyo thalmicMyo;
     [SerializeField] private GameObject menuUI;
 
     private KeyCode pauseKey = KeyCode.Escape;
-    private SetVolume volume;
+    private VolumeController volume;
 
     private static bool isPaused = false;
 
@@ -24,14 +25,14 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        myo = myo.GetComponent<ThalmicMyo> ();
-        volume = FindObjectOfType<SetVolume>();
+        thalmicMyo = myo.GetComponent<ThalmicMyo>();
+        volume = FindObjectOfType<VolumeController>();
         menuUI.SetActive(false);
     }
 
     void Update()
     {// If Escape button is pressed
-        if (Input.GetKeyDown(pauseKey) )//||(myo.pose == Thalmic.Myo.Pose.DoubleTap))
+        if (Input.GetKeyDown(pauseKey))//||(myo.pose == Thalmic.Myo.Pose.DoubleTap))
         {
             SetPauseStatus(!isPaused);
         }

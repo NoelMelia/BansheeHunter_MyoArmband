@@ -12,11 +12,9 @@ public class GrammerLevelController : MonoBehaviour
 {
     private string _Keyresponse = "";
     private string _response = "";
-    private PauseMenu pauseMenu;
-    private SetVolume setVolume; 
-
+    private PauseManager pauseMenu;
+    private VolumeController setVolume; 
     private GrammarRecognizer gr;
-    private Health health;
 
     private void Start() {
         _response = "";
@@ -30,8 +28,8 @@ public class GrammerLevelController : MonoBehaviour
         gr.Start();
         Debug.Log("Grammer Load and Recogniser Started!");
 
-        pauseMenu = FindObjectOfType<PauseMenu>();
-        setVolume = FindObjectOfType<SetVolume>();
+        pauseMenu = FindObjectOfType<PauseManager>();
+        setVolume = FindObjectOfType<VolumeController>();
     }
     private void Update() {
         //Switch between the Words Spoken
@@ -44,7 +42,7 @@ public class GrammerLevelController : MonoBehaviour
     // Checking that game is not paused and Command to pause game
     private void PauseGameCommands(){
         // Each Key has an action assign and is called to determine the different phrases said
-        if(_Keyresponse == "pause" && !PauseMenu.IsPaused){
+        if(_Keyresponse == "pause" && !PauseManager.IsPaused){
             switch (_response)
             {
                 // Pause the Game Rule
@@ -57,7 +55,7 @@ public class GrammerLevelController : MonoBehaviour
     }
     // Volume Commands for Sound of App 
     private void VolumeCommands(){
-        if(_Keyresponse == "volume" && PauseMenu.IsPaused){
+        if(_Keyresponse == "volume" && PauseManager.IsPaused){
             switch (_response)
             {
                 // Volume Rules
@@ -76,7 +74,7 @@ public class GrammerLevelController : MonoBehaviour
     }
     // Voice Control for Pause Menu
     private void PauseCommands(){
-        if(_Keyresponse == "pause" && PauseMenu.IsPaused ){
+        if(_Keyresponse == "pause" && PauseManager.IsPaused ){
             switch (_response)
             {
                 // Pause Menu Rules
@@ -100,7 +98,7 @@ public class GrammerLevelController : MonoBehaviour
     // Voice Control for when the game is over and gameover  
     // screen is active
     private void RestartCommand(){
-        if(Health.active){
+        if(_Keyresponse == "pause" && HealthController.active){
             switch (_response)
             {
                 case "restart":
