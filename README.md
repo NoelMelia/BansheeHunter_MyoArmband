@@ -115,6 +115,8 @@ Connecting the device with the support application was interesting which explain
 
 But overall, the process and experience of getting the chance in designing an application was an experience and fun outcome.
 
+### **Video Demonstration**
+https://youtu.be/nti20DbqUrE
 
 ### **References**
 https://time.com/4173507/myo-armband-review/
